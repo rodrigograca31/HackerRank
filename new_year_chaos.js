@@ -1,22 +1,23 @@
 const minimumBribes = (q) => {
-	let count = 0;
-	for (let i = 0; i < q.length; i++) {
-		const element = q[i];
-		let diff = element - i - 1;
-		// console.log(element, diff);
-		if (diff > 2) {
-			console.log("Too chaotic");
-			return;
-		}
-		if (diff <= 0) {
-			for (let j = Math.max(0, q[i] - 2); j < i; j++) {
-				if (q[j] > q[i]) {
-					count++;
-				}
-			}
-		}
-	}
-	console.log(count);
+    let count = 0;
+    for (let i = 0; i < q.length; i++) {
+        const element = q[i];
+        let diff = element - i - 1;
+        // console.log(element, diff);
+        if (diff > 2) {
+            console.log("Too chaotic");
+            return;
+        }
+        if (diff <= 0) {
+            //check how many bigger numbers there is between the current one and where it should be minus 2
+            for (let j = Math.max(0, q[i] - 2); j < i; j++) {
+                if (q[j] > q[i]) {
+                    count++;
+                }
+            }
+        }
+    }
+    console.log(count);
 };
 minimumBribes([1, 2, 5, 3, 7, 8, 6, 4]);
 // minimumBribes([2, 1, 5, 3, 4]);

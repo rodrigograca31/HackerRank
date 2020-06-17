@@ -12,6 +12,7 @@ const minimumBribes = (q: number[]) => {
 		}
 
 		if (diff <= 0) {
+			//check how many bigger numbers there is between the current one and where it should be minus 2
 			for (let j = Math.max(0, q[i] - 2); j < i; j++) {
 				if (q[j] > q[i]) {
 					count++;
