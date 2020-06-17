@@ -10,12 +10,9 @@ const minimumBribes = (q: number[]) => {
 			console.log("Too chaotic");
 			return;
 		}
-		if (element - i - 1) {
-			//if not 0
-			// console.log();
-		}
+
 		if (diff <= 0) {
-			for (let j = 0; j < i; j++) {
+			for (let j = Math.max(0, q[i] - 2); j < i; j++) {
 				if (q[j] > q[i]) {
 					count++;
 				}
@@ -26,7 +23,13 @@ const minimumBribes = (q: number[]) => {
 };
 
 minimumBribes([1, 2, 5, 3, 7, 8, 6, 4]);
-minimumBribes([1, 2, 3, 4, 5, 8, 7, 6]);
+// minimumBribes([2, 1, 5, 3, 4]);
+// minimumBribes([2, 5, 1, 3, 4]);
+// console.log();
+
+// minimumBribes([1, 2, 3, 4, 5, 8, 7, 6]);
+// console.log();
+// minimumBribes([1, 2, 5, 3, 4, 7, 8, 6]);
 // minimumBribes([1, 2, 5, 3, 7, 8, 4, 6]);
 
 // 1,2,3,4,5,6,7,8
